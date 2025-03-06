@@ -82,3 +82,40 @@ Initially, I chose Python for implementation since managing subprocesses in C fe
 - The feeling of fixing an obscure bug is great… until the next one appears.
 
 So far man, this project has been an engaging learning experience, but also as expected you know it is filled with both frustrating moments and satisfying breakthroughs. Every time I think I've got it under control, something weird happens. But at the same time, it's kind of satisfying. Still got some work to do but made a lot of progess today. 
+
+
+**2025-03-06 4:00pm**
+
+**Progress:**
+* Solid progress made on encryption module and driver program.
+* Implemented proper handling of PASS, ENCRYPT, and DECRYPT commands.
+* Improved data flow and command execution.
+
+**Updates:**
+
+* **Encryption Program:**
+    * Added `main()` function for stdin command handling.
+    * Passkey storage in memory, encryption/decryption enabled only when set.
+    * RESULT response for successful PASS command.
+    * Error handling for ENCRYPT without passkey.
+    * Calls `vigenere_cipher()` for encryption/decryption.
+    * Handles unknown commands gracefully.
+    * Implemented error handling for edge cases (empty inputs, malformed commands).
+    * Input validation for data integrity.
+    * Refactored code for readability and maintainability.
+    * Optimized memory usage for large text blocks.
+    * Detailed comments added for Vigenere cipher implementation.
+    * Created simple test cases for functionality verification.
+
+**Next Steps:**
+
+* Add unit tests for each command type.
+* Implement key rotation for enhanced security.
+* Investigate potential buffer overflow vulnerabilities.
+* Consider adding command history feature for debugging.
+* Conduct stress tests with large text inputs to assess performance.
+* Optimize pipe communication for better efficiency under heavy loads.
+* Review logging mechanisms to ensure all crucial events are captured.
+* Integrate with the driver program and test end-to-end functionality.
+
+Main this is to work on the driver program, I have for the most part set up everything that needs to be set up. So driver is last thing that is left to do. 
