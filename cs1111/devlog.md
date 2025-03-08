@@ -119,3 +119,89 @@ So far man, this project has been an engaging learning experience, but also as e
 * Integrate with the driver program and test end-to-end functionality.
 
 Main this is to work on the driver program, I have for the most part set up everything that needs to be set up. So driver is last thing that is left to do. 
+
+
+# 2025-03-7 10:00am
+
+## Thoughts Since Last Session
+
+Looking back at my entry from March 6th, I'm still a bit surprised at how smoothly the implementation of the encryption program went. In my experience, when things go "too well," it usually means I've overlooked something crucial. Since that session, I've been mentally reviewing the architecture and potential weak points in the system. Right after putting it into git I also started looking at the driver and started planning what I needed and also wanted to do. And I think I have a plan on how I want to do it. It will be different from how the project guidelines says it should be, but I think this is a WAY better verison of how it should have went. 
+
+## Plan for This Session
+
+Today, I plan to focus on hardening the implementation through more rigorous testing and some targeted improvements:
+
+1. **I want to list it out:**
+    print("\nAvailable commands:")
+    print("  1) password  - Set/change the encryption passkey")
+    print("  2) encrypt   - Encrypt a new string or one from history")
+    print("  3) decrypt   - Decrypt a new string or one from history")
+    print("  4) history   - Display the history of strings")
+    print("  5) quit      - Quit the program")
+
+I basically want the user to select it then it will go through. 
+
+I like how the user first has to chose then the word will come through then I can process. In the actual project, all it is is that you enter the command of what you want to do and also the word with it. I think this way it is easier. 
+
+Some additional thoughts that have occurred to me:
+- The pipe communication system could potentially face deadlocks in certain edge cases
+- We might need better handling for very large files during encryption/decryption
+- There's a possibility of resource leaks if the program terminates unexpectedly during an operation
+- I haven't thoroughly tested against malformed inputs that might circumvent our error handling
+
+These concerns weren't apparent during initial testing because our test cases, while comprehensive, might still be following expected patterns too closely.
+
+2. **Enhanced Error Handling**
+    - Double-check every command input so nothing weird slips through.
+    - Add a timeout so pipes don’t freeze indefinitely (because that’s been a fun issue).
+    - Make error messages actually useful instead of just yelling “Error” at me."
+
+3. **Resource Management Review**
+   - Audit all file and memory operations to ensure proper cleanup
+   - Implement signal handlers to catch unexpected terminations
+   - Add resource usage logging to track potential memory leaks
+
+4. **Documentation Updates**
+   - Add detailed comments for complex sections of code
+   - Update the README with installation and usage instructions
+   - Document all error codes and their meanings
+   - Create example usage scenarios
+
+I just need to wrap up the error handling and get the driver program fully functional. If I have time, I'll throw in some extra edge case tests, but that depends on how many unexpected bugs decide to show up.
+
+I expect this hardening phase to reveal at least a few issues that will need addressing before final submission. Finding these now will save considerable trouble later.
+
+
+**2025-03-08 2:00pm**
+
+**Progress:**
+
+* Driver program command handling finalized.
+* Comprehensive testing and validation completed.
+* Encryption and logger modules performed flawlessly.
+
+Ran a full round of tests encryption and logger modules worked without a hitch. Almost suspiciously smooth, but I'll take the win
+
+**Updates:**
+
+* **Driver Program:**
+    * Implemented and tested PASS, ENCRYPT, DECRYPT, and QUIT commands.
+    * Verified correct data transmission through pipes.
+    * Ensured proper error handling for incorrect or missing inputs.
+* **Testing and Validation:**
+    * Full test suite executed, including edge cases and stress tests.
+    * Confirmed consistent encryption/decryption results.
+    * Logger verified to record all actions with accurate timestamps.
+* **Encryption & Logger:**
+    * No modifications required after testing.
+
+**Next Steps:**
+
+* Revisit all components for final checks later in the week.
+* Conduct additional stress testing for 100% certainty.
+* Double check for any unnoticed edge cases.
+* Final documentation and cleanup before submission.
+
+**Before Submission Checklist:**
+    * Run all test cases one final time
+    * Ensure documentation is complete
