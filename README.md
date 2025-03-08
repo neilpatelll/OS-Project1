@@ -86,3 +86,4 @@ python3 driver.py mylog.txt
 * Passwords (passkeys) are **not** logged in plaintext to avoid security issues.
 * The history is kept **only in memory** and is not saved to disk. It is cleared when `driver.py` exits.
 * The log file (`mylog.txt` in the example) will show each command, the timestamps, and any relevant error messages or results.
+* The driver will make you enter what you want to do first then your input. For example, you would have to enter `ENCRYPT` first then the code will permit you to enter your input. Same goes for password. 
