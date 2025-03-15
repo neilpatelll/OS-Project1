@@ -1,4 +1,34 @@
 # CS4348 Project 1 Development Log
+
+## Started on the 2025-03-04 at 10:00am
+
+### Initial Project Plan:
+
+After reviewing the project requirements, I'm planning to implement a three-component system using Python. The system will consist of:
+
+1. Logger - Will handle timestamped event recording with various log levels
+2. Encryption Module - Will implement a Vigenère cipher for secure communication
+3. Driver Program - Will coordinate the other components and manage user commands
+
+I've chosen Python over C because of its simpler subprocess management and readability, though I'm aware this might introduce its own challenges. The three processes will communicate exclusively through pipes using a newline-delimited message protocol.
+
+My implementation strategy:
+- Start with basic process creation and pipe setup
+- Implement core functionality for each component separately
+- Add inter-process communication
+- Build command parsing in the driver
+- Add error handling and edge cases
+- Create test suite for validation
+
+Key challenges I anticipate:
+- Proper process termination and cleanup
+- Managing bidirectional communication through pipes
+- Handling potential race conditions
+- Ensuring secure key management for encryption
+
+I think it will take around a week to do that project if I work on it alot. (Took a week). 
+
+
 **2025-03-03 11:30pm**
 
 CS4348 Project 1 has been an interesting challenge. Inter-process communication (IPC) is both engaging and frustrating. At this point, I feel like I’ve spent half my time navigating pipes and debugging cryptic process interactions. The project consists of three programs—a logger, an encryption module, and a driver program—all communicating via pipes. When it works, it’s great. When it doesn’t, it’s a mystery waiting to be unraveled.
