@@ -1,6 +1,6 @@
 # CS4348 Project 1 Development Log
 
-## Started on the 2025-03-04 at 10:00am
+## Started on the 2025-03-02 at 10:00am
 
 ### Initial Project Plan:
 
